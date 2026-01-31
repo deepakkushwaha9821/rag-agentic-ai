@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Vector stores / indexes
+vectorstore/
+*.faiss
+*.pkl
+
+# Models (large files)
+models/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store

@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+langgraph
+langchain
+langchain-community
+sentence-transformers
+faiss-cpu
+gpt4all
+streamlit
+pypdf

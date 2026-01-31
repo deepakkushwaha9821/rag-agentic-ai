@@ -1,0 +1,125 @@
+import streamlit as st
+from graph_strict import rag_chatbot
+import time
+
+# Page config
+st.set_page_config(
+    page_title="Agentic AI Chatbot",
+    page_icon="🤖",
+    layout="wide"
+)
+
+# Title and description
+st.title("🤖 Agentic AI Knowledge Base Chatbot")
+st.markdown("""
+This chatbot answers questions **strictly** based on the *Agentic AI eBook*.
+All answers are grounded in the document with citations and confidence scores.
+""")
+
+# Sidebar with info
+with st.sidebar:
+    st.header("ℹ️ About")
+    st.markdown("""
+    **Features:**
+    - ✅ Strictly grounded answers
+    - 📚 Source citations
+    - 📊 Confidence scores
+    - 🔍 Retrieved context display
+    
+    **Sample Questions:**
+    - What is Agentic AI?
+    - How does Agentic AI differ from traditional AI?
+    - What are the key components of an agentic system?
+    - What are the applications of Agentic AI?
+    - What challenges does Agentic AI face?
+    """)
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Display chat history
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+        
+        # Show metadata for assistant messages
+        if message["role"] == "assistant" and "metadata" in message:
+            with st.expander("📊 Response Details"):
+                meta = message["metadata"]
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.metric("Confidence", f"{meta['confidence']:.0%}")
+                with col2:
+                    st.metric("Chunks Retrieved", len(meta["chunks"]))
+                
+                if meta.get("citations"):
+                    st.write(f"**Citations:** Chunks {', '.join(map(str, meta['citations']))}")
+                
+                st.markdown("**Retrieved Chunks:**")
+                for i, chunk in enumerate(meta["chunks"], 1):
+                    st.markdown(f"""
+                    **Chunk {i}** (Page {chunk['page']}, Score: {chunk['score']:.4f})
+                    > {chunk['text'][:300]}...
+                    """)
+
+# Chat input
+if prompt := st.chat_input("Ask a question about Agentic AI..."):
+    # Add user message
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    
+    # Generate response
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            try:
+                # Invoke RAG chatbot
+                result = rag_chatbot.invoke({"question": prompt})
+                
+                # Display answer
+                st.markdown(result["answer"])
+                
+                # Store metadata
+                metadata = {
+                    "confidence": result["confidence"],
+                    "chunks": result["docs"],
+                    "citations": result.get("citations", [])
+                }
+                
+                # Display details in expander
+                with st.expander("📊 Response Details"):
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.metric("Confidence", f"{result['confidence']:.0%}")
+                    with col2:
+                        st.metric("Chunks Retrieved", len(result["docs"]))
+                    
+                    if result.get("citations"):
+                        st.write(f"**Citations:** Chunks {', '.join(map(str, result['citations']))}")
+                    
+                    st.markdown("**Retrieved Chunks:**")
+                    for i, doc in enumerate(result["docs"], 1):
+                        st.markdown(f"""
+                        **Chunk {i}** (Page {doc['page']}, Score: {doc['score']:.4f})
+                        > {doc['text'][:300]}...
+                        """)
+                
+                # Add to chat history
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": result["answer"],
+                    "metadata": metadata
+                })
+                
+            except Exception as e:
+                st.error(f"Error: {str(e)}")
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": f"Sorry, an error occurred: {str(e)}"
+                })
+
+# Clear chat button
+if st.sidebar.button("🗑️ Clear Chat"):
+    st.session_state.messages = []
+    st.rerun()
