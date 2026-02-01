@@ -1,0 +1,100 @@
+[
+  {
+    "timestamp": "2026-02-01T04:05:27.722023",
+    "question": "agentic ai main components",
+    "answer": "The key components of agentic AI are Perception, Reasoning, Planning, Learning, and Execution. These elements work together in the system's interaction with its environment, enabling autonomous decision-making and action. ###",
+    "confidence": 0.82,
+    "retrieved_chunks": [
+      {
+        "page": 2,
+        "score": 0.2081,
+        "text": "Agentic AI\nAn Executive's Guide to In-depth\nUnderstanding of Agentic AI"
+      },
+      {
+        "page": 16,
+        "score": 0.1767,
+        "text": "In this section, we explore the core components of agentic AI, explaining \nhow they work together to enable autonomous decision-making and \naction, on what they are classified. How do agents perceive and interact \nwith their environment? What drives their decisions? How can they adapt \nand learn over time? Here we cover the following topics: \n                 � The Building Blocks of Agentic AI \n                 � Key Components: Perception, Reasoning, Planning, Learning, \n                    and Execution \n                 � Types and Categories of Agents"
+      },
+      {
+        "page": 16,
+        "score": 0.2234,
+        "text": "and Execution \n                 � Types and Categories of Agents \n                 � Applications Across Industries \nANATOMY OF \nAN AGENTIC AI \nSYSTEM\n11"
+      },
+      {
+        "page": 19,
+        "score": 0.2246,
+        "text": "2.2 Understanding the Building Blocks\nAt the heart of every Agentic AI system lies a delicate interplay of key elements: \nThe interaction between the agent, its environment, and its actions forms the \nfoundation of agentic AI. The environment can be static or dynamic, and the agent \ncan be reactive (responding to immediate stimuli) or proactive (planning for future \noutcomes). The agent’s use of memory and learning from interactions enables \ncontinuous improvement, leading to more effective and adaptive decision-making."
+      },
+      {
+        "page": 4,
+        "score": 0.2035,
+        "text": "Table of Contents\n06\nPractical Applications of Agentic AI\n05\nYour Readiness for Agentic AI\n04\nOrchestrating Agentic AI Systems \n03\nMulti-Agent Systems\n01\nIntroduction to Agentic AI\n02\nAnatomy of an Agentic AI System"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-02-01T06:44:44.214860",
+    "question": "what is agentic ai",
+    "answer": "Not found in the provided document.",
+    "confidence": 0.0,
+    "retrieved_chunks": [
+      {
+        "page": 2,
+        "score": 0.1954,
+        "text": "Agentic AI\nAn Executive's Guide to In-depth\nUnderstanding of Agentic AI"
+      },
+      {
+        "page": 4,
+        "score": 0.2242,
+        "text": "Table of Contents\n06\nPractical Applications of Agentic AI\n05\nYour Readiness for Agentic AI\n04\nOrchestrating Agentic AI Systems \n03\nMulti-Agent Systems\n01\nIntroduction to Agentic AI\n02\nAnatomy of an Agentic AI System"
+      },
+      {
+        "page": 53,
+        "score": 0.2061,
+        "text": "Agentic AI is transforming industries by solving critical challenges with \ntailored solutions and delivering real, measurable results. From \nmanufacturing and retail to healthcare, construction, and \npharmaceuticals, these use cases illustrate what was needed, what was \ndone, and the impact it created.\nIn this section, we:\n                 � Highlight real-world examples across varied industries.\n                 � Discuss their unique challenges, solutions, and outcomes.\n                 � Show how AI drives innovation and delivers \n                    business success.\nPRACTICAL"
+      },
+      {
+        "page": 16,
+        "score": 0.2212,
+        "text": "In this section, we explore the core components of agentic AI, explaining \nhow they work together to enable autonomous decision-making and \naction, on what they are classified. How do agents perceive and interact \nwith their environment? What drives their decisions? How can they adapt \nand learn over time? Here we cover the following topics: \n                 � The Building Blocks of Agentic AI \n                 � Key Components: Perception, Reasoning, Planning, Learning, \n                    and Execution \n                 � Types and Categories of Agents"
+      },
+      {
+        "page": 3,
+        "score": 0.2102,
+        "text": "Preface\nArtificial intelligence has transitioned from standalone tools to \ninterconnected systems capable of autonomous decision-making. Agentic \nAI provides a practical framework for leveraging these systems, enabling \norganizations to drive greater efficiency and precision in their operations \nand innovations. \n \nThis book arrives at a pivotal moment, offering clarity and actionable \nguidance as businesses address the challenges and opportunities of AI \nsystems that can perceive, decide, and act independently. Whether you’re"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-02-01T08:34:15.581586",
+    "question": "different between llm and agentic ai",
+    "confidence": 0.5,
+    "retrieved_chunks": [
+      {
+        "page": 16,
+        "score": 0.2675,
+        "text": "In this section, we explore the core components of agentic AI, explaining how they work together to enable autonomous decision-making and action, on what they are classified. How do agents perceive and interact with their environment? What drives their decisions? How can they adapt and learn over time? Here we cover the following topics:\n- The Building Blocks of Agentic AI\n- Key Components: Perception, Reasoning, Planning, Learning, and Execution\n- Types and Categories of Agents\n- Applications Across Industries ANATOMY OF AN AGENTIC AI SYSTEM 11"
+      },
+      {
+        "page": 9,
+        "score": 0.1474,
+        "text": "The table below compares the key aspects of LLMs and agents: How They Work Together? Agentic AI and LLMs work together to boost performance by combining specialized agents with LLM capabilities. These agents operate in a dynamic network, communicating efficiently and learning from past experiences to improve decision-making. For example: In customer service, an LLM generates responses to customer inquiries, while Agentic AI analyzes the context, learns from each interaction and human feedback, and continuously improves its responses over time, enhancing accuracy and customer satisfaction."
+      },
+      {
+        "page": 8,
+        "score": 0.1508,
+        "text": "structured data, like following a strict recipe. Agentic AI adapts to different situations, handling unstructured inputs, much like a chef improvising with available ingredients. LLMs vs. Agentic AI: Distinct Roles, Complementary Strengths Agents are more than LLMs. While LLMs are powerful tools for processing and generating human-like text, agents are goal-driven systems capable of performing actions autonomously in a dynamic environment. Type Definition Capabilities Type Definition Capabilities Traditional AI Non-agentic AI Agentic AI Generative AI Basic automation and rule -based systems."
+      },
+      {
+        "page": 10,
+        "score": 0.2441,
+        "text": "1.2 How Agentic AI Stands Apart All AI systems analyze and create outputs"
+      },
+      {
+        "page": 2,
+        "score": 0.2538,
+        "text": "Agentic AI An Executive's Guide to In-depth Understanding of Agentic AI"
+      }
+    ]
+  }
+]

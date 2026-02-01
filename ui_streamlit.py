@@ -33,7 +33,7 @@ if st.button("Ask") and query:
         res = requests.post(
             "http://localhost:8000/chat",
             json={"question": query},   # ✅ FIXED
-            timeout=300
+            timeout=1000
         )
         res.raise_for_status()
         data = res.json()
