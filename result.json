@@ -96,5 +96,71 @@
         "text": "Agentic AI An Executive's Guide to In-depth Understanding of Agentic AI"
       }
     ]
+  },
+  {
+    "timestamp": "2026-02-01T08:52:22.459866",
+    "question": "what is working of agentic ai ?",
+    "answer": "Agentic AI manages tasks to create a perfect outcome, adapts continuously, perceives its environment, makes decisions driven by this perception, and learns over time. It does not just analyze or create outputs; it solves critical challenges with tailored solutions for various industries including manufacturing, retail, healthcare, construction, and pharmaceuticals through autonomous decision-making and action. ###",
+    "confidence": 0.82,
+    "retrieved_chunks": [
+      {
+        "page": 7,
+        "score": 0.2164,
+        "text": "- she's working with an AI assistant that doesn't just follow commands, but understands her goals, anticipates her needs, and takes proactive steps to help her succeed. Agentic AI is like having a super-intelligent collaborator. It is not just a passive tool that understands your business strategy, it suggests improvements, drafts proposals, tracks market trends, and even reaches out to potential partners without you micromanaging every step. Agentic AI is At its core, Agentic AI is about: A Chef: Expertly manages every task to create the perfect outcome. A Coach: Continuously adapts"
+      },
+      {
+        "page": 10,
+        "score": 0.1781,
+        "text": "1.2 How Agentic AI Stands Apart All AI systems analyze and create outputs"
+      },
+      {
+        "page": 53,
+        "score": 0.2119,
+        "text": "Agentic AI is transforming industries by solving critical challenges with tailored solutions and delivering real, measurable results. From manufacturing and retail to healthcare, construction, and pharmaceuticals, these use cases illustrate what was needed, what was done, and the impact it created. In this section, we:\n- Highlight real-world examples across varied industries.\n- Discuss their unique challenges, solutions, and outcomes.\n- Show how AI drives innovation and delivers business success. PRACTICAL APPLICATIONS OF AGENTIC AI 48"
+      },
+      {
+        "page": 2,
+        "score": 0.2086,
+        "text": "Agentic AI An Executive's Guide to In-depth Understanding of Agentic AI"
+      },
+      {
+        "page": 16,
+        "score": 0.1991,
+        "text": "In this section, we explore the core components of agentic AI, explaining how they work together to enable autonomous decision-making and action, on what they are classified. How do agents perceive and interact with their environment? What drives their decisions? How can they adapt and learn over time? Here we cover the following topics:\n- The Building Blocks of Agentic AI\n- Key Components: Perception, Reasoning, Planning, Learning, and Execution\n- Types and Categories of Agents\n- Applications Across Industries ANATOMY OF AN AGENTIC AI SYSTEM 11"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-02-01T09:02:33.260904",
+    "question": "what is Multi-Agent Systems ?",
+    "answer": "Agentic systems can be categorized as single and multi-agent systems (MAS). MAS shine in tasks requiring diverse feedback and parallel task execution. They are built upon a sophisticated architecture that consists of several interconnected layers, enabling specialized, autonomous agents to collaborate dynamically.\nMulti-Agent Systems handle complex, dynamic tasks through collaboration among different autonomous agents. Multi-Agent Systems require clear goals and communication mechanisms for the agents to interact effectively. ###",
+    "confidence": 0.81,
+    "retrieved_chunks": [
+      {
+        "page": 33,
+        "score": 0.2474,
+        "text": "- Operate in isolation, not accounting for real-time interdependencies.\n- Lack collaboration across supply chain nodes.\n- Fail to provide dynamic adaptability during unexpected events. How Multi-Agent Systems (MAS) Handle This? Multi-agent systems address the limitations by enabling specialized, autonomous agents to collaborate dynamically. Agents in the System: 28 AGENTIC AI FOR EXECUTIVES"
+      },
+      {
+        "page": 29,
+        "score": 0.2158,
+        "text": "What Are Multi-Agent Systems? Agentic systems can be categorized as single and multi-agent systems (MAS). Single-agent architectures are efficient in scenarios where tasks are well-defined, and processes are systematic. Such architectures benefit from a single agent's ability to operate without the risk of interference from other agents' feedback, which can be distracting. However, they may hit execution loops if their reasoning capabilities aren't robust. In contrast, MAS shines in tasks requiring diverse feedback and parallel task execution. These systems can leverage feedback from other"
+      },
+      {
+        "page": 36,
+        "score": 0.2552,
+        "text": "In this section, we take a closer look at how to orchestrate multi-agent systems (MAS) so that different autonomous agents can work together smoothly. We’ll dive into the challenges of managing complex systems, how communication between agents plays a key role, and the impact of task allocation on efficiency. This section will include :\n- Importance of Orchestration\n- Common Challenges\n- Role of Communication and Agent Registries\n- Task Breakdown, Planning, and Verification\n- Steps for Successful Implementation ORCHESTRATING AGENTIC AI SYSTEMS 31"
+      },
+      {
+        "page": 30,
+        "score": 0.2398,
+        "text": "can interfere with the decision-making capacity of the agents, whereas too little information can also have similar consequences. There are some necessary components for a system to qualify as a multi-agent AI system. A system is a multi-agent AI system when it contains all the foundational agents mentioned in Section 2, and one or more worker and utility agents. It should have clear goals, and a communication mechanism for the agents to interact. 3.1 Structural Layers in Multi-Agent Systems MAS are built upon a sophisticated architecture that consists of several interconnected layers, each"
+      },
+      {
+        "page": 28,
+        "score": 0.1886,
+        "text": "In this section, we explore Multi-Agent Systems (MAS) and their capabilities in handling complex, dynamic tasks. MAS are increasingly utilized for their ability to collaborate and adapt in real-time, making them suitable for a variety of applications. Here are the topics that we’ll cover in this section :\n- What Are Multi-Agent Systems?\n- Structural Layers in Multi-Agent Systems\n- Scenario: A Supply Chain in Crisis\n- Benefits, Challenges and Mitigation Strategies MULTI-AGENT SYSTEMS 23"
+      }
+    ]
   }
 ]
