@@ -1,35 +1,47 @@
-Agentic AI RAG Chatbot
-A document-grounded Retrieval-Augmented Generation (RAG) chatbot developed in Python. This system answers queries exclusively using data from the Agentic AI eBook. It is engineered to prioritize accuracy, minimize hallucination, and provide transparent confidence metrics via both a REST API and a graphical user interface.
+# Agentic AI RAG Chatbot
 
-Technology Stack
-FastAPI: Backend API framework.
+A **document-grounded Retrieval-Augmented Generation (RAG) chatbot** developed in Python. This system answers queries **exclusively** using data from the *Agentic AI eBook*. It is engineered to prioritize accuracy, minimize hallucination, and provide **transparent confidence metrics** via both a REST API and an optional graphical user interface.
 
-Streamlit: Interactive chat interface.
+---
 
-LangGraph: Orchestration framework for RAG workflows.
+## Technology Stack
 
-SentenceTransformers: Text embedding models (BAAI/bge-base-en-v1.5).
+* **FastAPI** — Backend API framework
+* **Streamlit** — Interactive chat interface
+* **LangGraph** — Orchestration framework for RAG workflows
+* **SentenceTransformers** — Text embedding models (`BAAI/bge-base-en-v1.5`)
+* **FAISS / Pinecone** — Vector database solutions (local and cloud)
+* **qwen** — Local Large Language Model (LLM) inference
 
-FAISS / Pinecone: Vector database solutions (supports both local and cloud deployments).
+---
 
-GPT4All: Local Large Language Model (LLM) inference.
+## Key Features
 
-Key Features
-Domain-Specific Retrieval: Answers are strictly derived from the source PDF to ensure data integrity.
+* **Domain-Specific Retrieval**
+  Answers are strictly derived from the source PDF to ensure data integrity.
 
-Advanced Ingestion Pipeline: Includes normalization for text, tables, and lists.
+* **Advanced Ingestion Pipeline**
+  Normalization and cleaning for text, tables, and lists.
 
-Semantic Search: Utilizes high-dimensional vector search for accurate context retrieval.
+* **Semantic Search**
+  High-dimensional vector similarity search for accurate context retrieval.
 
-Confidence Scoring: Provides similarity metrics to gauge the reliability of the retrieved information.
+* **Confidence Scoring**
+  Similarity-based metrics to estimate the reliability of responses.
 
-Context Transparency: Returns the specific document chunks used to generate the answer.
+* **Context Transparency**
+  Returns the exact document chunks used to generate each answer.
 
-Local Inference: Runs entirely on local infrastructure without reliance on external AI coding platforms.
+* **Local Inference**
+  Fully local execution with no dependency on external AI coding platforms.
 
-System Architecture
-High-Level Workflow
-Plaintext
+---
+
+## System Architecture
+
+### High-Level Workflow
+
+```plaintext
 User Question
       |
       v
@@ -55,8 +67,13 @@ Relevant Chunks        Grounded Answer
                  v
            Final Response
  (Answer + Confidence + Context)
-Ingestion Pipeline
-Plaintext
+```
+
+---
+
+### Ingestion Pipeline
+
+```plaintext
 PDF Source (Agentic AI eBook)
              |
              v
@@ -78,68 +95,112 @@ PDF Source (Agentic AI eBook)
        Vector Store
     ├─ FAISS (Local)
     └─ Pinecone (Cloud)
-Retrieval-Augmented Generation (RAG) Logic
-The pipeline uses LangGraph to orchestrate the flow between two primary nodes:
+```
 
-Retrieve Node:
+---
 
-Encodes the user query into a vector.
+## Retrieval-Augmented Generation (RAG) Logic
 
-Queries the FAISS or Pinecone index to fetch the top-k most relevant text chunks.
+The pipeline uses **LangGraph** to orchestrate the interaction between two primary nodes:
 
-Generate Node:
+### Retrieve Node
 
-Constructs a prompt using strictly the retrieved chunks.
+* Encodes the user query into a vector
+* Queries FAISS or Pinecone to retrieve the **top-k most relevant chunks**
 
-Generates an answer only if the information is explicitly present in the source text.
+### Generate Node
 
-If the information is missing, the system returns a standardized fallback response:
+* Constructs a prompt using **only** the retrieved chunks
+* Generates an answer **only if** the information exists in the source text
+* If no relevant information is found, the system returns the standardized fallback:
 
-"Not found in the provided document."
+```text
+Not found in the provided document.
+```
 
-Project Structure
-Plaintext
+---
+
+## Project Structure
+
+```plaintext
 rag-agentic-ai/
 │
 ├── api.py                  # FastAPI backend application
 ├── ui_streamlit.py         # Streamlit frontend interface
-├── ingest.py               # Data ingestion script (PDF → Vector Store)
+├── ingest.py               # Data ingestion (PDF → Vector Store)
 ├── graph.py                # LangGraph pipeline definition
-├── graph_state.py          # State management for RAG workflow
-├── retrieve_node.py        # Logic for document retrieval
-├── generate_node.py        # Logic for answer generation and scoring
-├── retriever.py            # Interface for FAISS/Pinecone interactions
-├── llm.py                  # Configuration for GPT4All local LLM
+├── graph_state.py          # RAG workflow state management
+├── retrieve_node.py        # Document retrieval logic
+├── generate_node.py        # Answer generation and confidence scoring
+├── retriever.py            # FAISS / Pinecone abstraction layer
+├── llm.py                  # GPT4All local LLM configuration
 │
 ├── data/
 │   └── Ebook-Agentic-AI.pdf
 │
-├── vectorstore/            # Storage for FAISS index and chunks
-├── models/                 # Directory for local LLM binaries
+├── vectorstore/            # FAISS index and stored chunks
+├── models/                 # Local LLM binaries
 │
 ├── requirements.txt
 ├── README.md
 └── .env
-Installation and Execution
-1. Install Dependencies
-Ensure you have a compatible Python environment, then install the required packages:
+```
 
-Bash
+---
+
+## Installation and Execution
+
+### 1. Install Dependencies
+
+Ensure you have a compatible Python environment, then install all required packages:
+
+```bash
 pip install -r requirements.txt
-2. Ingest Data
-Run the ingestion script to process the source document. This process includes loading the PDF, cleaning the text (preserving table structures), chunking the content, generating embeddings, and storing vectors in FAISS or Pinecone.
+```
 
-Bash
+---
+
+### 2. Ingest Data
+
+Run the ingestion script to process the source document. This step includes:
+
+* Loading the PDF
+* Cleaning and normalizing text (including tables)
+* Chunking content
+* Generating embeddings
+* Persisting vectors in FAISS or Pinecone
+
+```bash
 python ingest.py
-3. Start the Backend API
-Launch the FastAPI server using Uvicorn.
+```
 
-Bash
+---
+
+### 3. Start the Backend API
+
+Launch the FastAPI server using Uvicorn:
+
+```bash
 python -m uvicorn api:app --reload --port 8000
-API Documentation: Available at http://localhost:8000/docs
+```
 
-4. Launch the User Interface (Optional)
-Start the Streamlit application to interact with the chatbot via a web interface.
+**API Documentation:**
+Available at `http://localhost:8000/docs`
 
-Bash
+---
+
+### 4. Launch the User Interface (Optional)
+
+Start the Streamlit application to interact with the chatbot through a web UI:
+
+```bash
 streamlit run ui_streamlit.py
+```
+
+---
+
+## Notes
+
+* The system is intentionally restrictive by design to prevent hallucination.
+* All responses are grounded in the provided document and include traceable context.
+* Suitable for research, internal knowledge bases, and compliance-sensitive environments.
